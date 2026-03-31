@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Coming Soon</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: red;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      color: white;
+      font-size: 3rem;
+      z-index: 1;
+      position: relative;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: pink;
+      transform: translateY(100vh) rotate(45deg);
+      animation: float 10s infinite linear;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: pink;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Coming soon</h1>
+
+  <!-- Negative delays = already in motion on load -->
+  <div class="heart" style="left:10%; animation-delay:-2s;"></div>
+  <div class="heart" style="left:25%; animation-delay:-5s;"></div>
+  <div class="heart" style="left:40%; animation-delay:-8s;"></div>
+  <div class="heart" style="left:55%; animation-delay:-1s;"></div>
+  <div class="heart" style="left:70%; animation-delay:-6s;"></div>
+  <div class="heart" style="left:85%; animation-delay:-3s;"></div>
+
+</body>
+</html>
