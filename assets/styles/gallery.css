@@ -47,6 +47,7 @@
     justify-content: center;
 
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
 
     transition: opacity 0.25s ease;
@@ -54,6 +55,7 @@
 
 #lightbox.open {
     opacity: 1;
+    visibility: visible;
     pointer-events: auto;
 }
 
@@ -73,11 +75,9 @@
     cursor: pointer;
     backdrop-filter: blur(8px);
     z-index: 6000;
-    pointer-events: auto;
-    touch-action: manipulation;
 }
 
-/* close */
+/* CLOSE */
 #lightbox-close {
     top: 20px;
     right: 20px;
@@ -87,9 +87,10 @@
     border-radius: 50%;
 
     font-size: 32px;
+    line-height: 1;
 }
 
-/* prev / next */
+/* NAV */
 #lightbox-prev,
 #lightbox-next {
     top: 50%;

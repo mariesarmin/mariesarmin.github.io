@@ -42,7 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
     function resize() {
         const dpr = window.devicePixelRatio || 1;
         const newWidth = window.innerWidth;
-        const newHeight = window.innerHeight;
+        const newHeight = window.visualViewport
+            ? window.visualViewport.height
+            : window.innerHeight;
 
         canvas.width = newWidth * dpr;
         canvas.height = newHeight * dpr;
