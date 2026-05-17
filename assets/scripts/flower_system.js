@@ -37,23 +37,31 @@ document.addEventListener("DOMContentLoaded", () => {
         return Math.exp(-(x * x) / (2 * sigma * sigma));
     }
 
+    let lastWidth = 0;
+
     function resize() {
         const dpr = window.devicePixelRatio || 1;
+        const newWidth = window.innerWidth;
+        const newHeight = window.innerHeight;
 
-        canvas.width = window.innerWidth * dpr;
-        canvas.height = window.innerHeight * dpr;
+        canvas.width = newWidth * dpr;
+        canvas.height = newHeight * dpr;
 
-        canvas.style.width = window.innerWidth + "px";
-        canvas.style.height = window.innerHeight + "px";
+        canvas.style.width = newWidth + "px";
+        canvas.style.height = newHeight + "px";
 
-        w = window.innerWidth;
-        h = window.innerHeight;
+        w = newWidth;
+        h = newHeight;
 
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-        if (images.length) {
+        const widthChanged = Math.abs(newWidth - lastWidth) > 20;
+
+        if (images.length && widthChanged) {
             buildFlowers();
         }
+
+        lastWidth = newWidth;
     }
 
     function buildFlowers() {

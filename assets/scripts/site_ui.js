@@ -57,8 +57,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     menuToggle.addEventListener("click", openMenu);
-    menuClose.addEventListener("click", closeMenu);
-
+    menuClose.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+        document.body.classList.remove("menu-open");
+    });
     mobileLinks.forEach(link => {
         link.addEventListener("click", closeMenu);
     });
