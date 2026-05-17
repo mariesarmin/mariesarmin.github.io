@@ -1,79 +1,221 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
-  <meta charset="UTF-8">
-  <title>Coming Soon</title>
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: red;
-      overflow: hidden;
-      font-family: Arial, sans-serif;
-    }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mári és Ármin</title>
 
-    h1 {
-      color: white;
-      font-size: 3rem;
-      z-index: 1;
-      position: relative;
-    }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    .heart {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background-color: pink;
-      transform: translateY(100vh) rotate(45deg);
-      animation: float 10s infinite linear;
-    }
-
-    .heart::before,
-    .heart::after {
-      content: "";
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background-color: pink;
-      border-radius: 50%;
-    }
-
-    .heart::before {
-      top: -10px;
-      left: 0;
-    }
-
-    .heart::after {
-      left: -10px;
-      top: 0;
-    }
-
-    @keyframes float {
-      0% {
-        transform: translateY(100vh) rotate(45deg);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-10vh) rotate(45deg);
-        opacity: 0;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/styles/styles.css" />
+  <link rel="stylesheet" href="assets/styles/program.css" />
+  <link rel="stylesheet" href="assets/styles/rsvp.css" />
+  <link rel="stylesheet" href="assets/styles/gift.css" />
+  <link rel="stylesheet" href="assets/styles/gallery.css" />
 </head>
 <body>
 
-  <h1>Coming soon</h1>
+<!-- LOADING -->
+<div id="loading-screen">
+  <div id="loading-logo-wrap">
+    <img class="logo-ring ring-1" src="assets/logo/logo_outside.png" alt="">
+    <img class="logo-ring ring-2" src="assets/logo/logo_outside.png" alt="">
+    <img class="logo-ring ring-3" src="assets/logo/logo_outside.png" alt="">
+    <img id="loading-logo-inside" src="assets/logo/logo_inside.png" alt="Mári és Ármin">
+  </div>
+</div>
 
-  <!-- Negative delays = already in motion on load -->
-  <div class="heart" style="left:10%; animation-delay:-2s;"></div>
-  <div class="heart" style="left:25%; animation-delay:-5s;"></div>
-  <div class="heart" style="left:40%; animation-delay:-8s;"></div>
-  <div class="heart" style="left:55%; animation-delay:-1s;"></div>
-  <div class="heart" style="left:70%; animation-delay:-6s;"></div>
-  <div class="heart" style="left:85%; animation-delay:-3s;"></div>
+<!-- FLOWER CANVAS -->
+<canvas id="c"></canvas>
 
+<!-- DESKTOP HEADER --><header id="sticky-header">
+  <nav class="desktop-nav">
+    <div class="nav-group left">
+      <a href="#program">Program</a>
+      <a href="#rsvp">Visszajelzés</a>
+    </div>
+
+    <div id="header-center-logo" aria-label="Mári és Ármin"></div>
+
+    <div class="nav-group right">
+      <a href="#gift">Ajándék</a>
+      <a href="#gallery">Galéria</a>
+    </div>
+  </nav>
+</header>
+
+<!-- MOBILE HEADER -->
+<header id="mobile-header">
+  <button id="menu-toggle" aria-label="Menü megnyitása">☰</button>
+  <div class="sticky-logo-wrap" aria-label="Mári és Ármin"></div>
+</header>
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu">
+  <button id="menu-close" aria-label="Menü bezárása">×</button>
+  <nav class="mobile-nav">
+    <a href="#program">Program</a>
+    <a href="#rsvp">Visszajelzés</a>
+
+    <div class="mobile-menu-logo">
+      <img src="assets/logo/logo_whole.png" alt="Mári és Ármin">
+    </div>
+
+    <a href="#gift">Ajándék</a>
+    <a href="#gallery">Galéria</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div id="hero-logo">
+    <img class="hero-ring" src="assets/logo/logo_outside.png" alt="">
+    <img class="hero-center" src="assets/logo/logo_inside.png" alt="Mári és Ármin">
+  </div>
+
+  <div id="invitation-text">
+    <p>Sok szeretettel hívunk benneteket,</p>
+    <p>hogy együtt ünnepeljünk 2026.08.29-én!</p>
+  </div>
+  <div id="hiperkarma">
+    <p>„Álmodj Rólam ahogy én is Rólad" - Hiperkarma</p>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section id="program" class="snap-section">
+  <div class="section-content program-content">
+    <h2>Program</h2>
+
+    <div class="program-block">
+      <h3>Nászmise</h3>
+
+      <div class="program-item">
+        <span class="time">15:00</span>
+        <span class="details">
+                    <a
+                            href="https://maps.app.goo.gl/BawpEkfXQTb7Ack7A"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                    >
+                        Máriaremetei Kisboldogasszony Bazilika
+                    </a>
+                    <br>
+                    <span class="address">
+                        1029 Budapest, Templom kert 1.
+                    </span>
+                </span>
+      </div>
+    </div>
+
+    <div class="program-block">
+      <h3>Lakodalom</h3>
+
+      <div class="program-item">
+        <span class="time">17:00</span>
+        <span class="details">
+                    <a
+                            href="https://maps.app.goo.gl/thHxpa6ur9FPdzjE6"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                    >
+                        Wedding Wood
+                    </a>
+                    <br>
+                    <span class="address">
+                        Budakeszi Erzsébetpuszta 2092
+                    </span>
+                </span>
+      </div>
+
+      <div class="program-item">
+        <span class="time">17:00</span>
+        <span class="details">Konvojjal érkezés a Wedding Woodba</span>
+      </div>
+
+      <div class="program-item">
+        <span class="time">18:30</span>
+        <span class="details">Vacsora</span>
+      </div>
+
+      <div class="program-item">
+        <span class="time">21:00</span>
+        <span class="details">Nyitótánc</span>
+      </div>
+
+      <div class="program-item">
+        <span class="time">22:30</span>
+        <span class="details">Torta</span>
+      </div>
+
+      <div class="program-item">
+        <span class="time">00:00</span>
+        <span class="details">Éjféli menü</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="rsvp" class="snap-section">
+  <div class="section-content rsvp-content">
+    <h2>Visszajelzés</h2>
+
+    <p class="rsvp-text">
+      Kérünk jelezzetek vissza az alábbi form kitöltésével Június 30-ig.
+    </p>
+
+    <a
+            class="rsvp-button"
+            href="https://docs.google.com/forms/d/18ij_0XQjWHk23BYt8Vt8FO1MKMObYx8xcJDKDNpFMmg/edit?pli=1"
+            target="_blank"
+            rel="noopener noreferrer"
+    >
+      Visszajelzés küldése
+    </a>
+  </div>
+</section>
+
+<section id="gift" class="snap-section">
+  <div class="section-content gift-content">
+    <h2>Ajándék</h2>
+
+    <p class="gift-text">
+      Számunkra a legfontosabb, hogy ezen a különleges napon együtt ünnepelhetünk Veletek.
+    </p>
+
+    <p class="gift-text">
+      Ha mégis szeretnétek hozzájárulni közös életünk kezdetéhez, hálás szívvel fogadjuk a borítékba rejtett jókívánságokat és támogatást.
+    </p>
+  </div>
+</section>
+
+<section id="gallery" class="snap-section">
+  <div class="section-content gallery-content">
+    <h2>Galéria</h2>
+
+    <img
+            id="gallery-preview"
+            src="assets/gallery/img1.jpg"
+            alt="Galéria előnézet"
+    >
+  </div>
+</section>
+
+<div id="lightbox">
+  <button id="lightbox-close" aria-label="Bezárás">×</button>
+  <button id="lightbox-prev" aria-label="Előző">‹</button>
+
+  <img id="lightbox-image" src="" alt="Galéria kép">
+
+  <button id="lightbox-next" aria-label="Következő">›</button>
+</div>
+</main>
+
+<script src="assets/scripts/flower_system.js"></script>
+<script src="assets/scripts/site_ui.js"></script>
+<script src="assets/scripts/gallery.js"></script>
 </body>
 </html>
+

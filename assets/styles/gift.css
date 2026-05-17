@@ -1,0 +1,16 @@
+.gift-content {
+    max-width: 1000px;
+    text-align: center;
+    color: white;
+}
+
+.gift-content h2 {
+    margin-bottom: 55px;
+}
+
+.gift-text {
+    font-size: 30px;
+    line-height: 1.2;
+    margin: 0 auto 28px;
+    max-width: 860px;
+}

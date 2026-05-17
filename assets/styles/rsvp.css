@@ -1,0 +1,47 @@
+.rsvp-content {
+    max-width: 900px;
+    text-align: center;
+    color: white;
+}
+
+.rsvp-content h2 {
+    margin-bottom: 50px;
+}
+
+.rsvp-text {
+    font-size: 34px;
+    line-height: 1.35;
+    margin: 0 auto 50px;
+    max-width: 760px;
+}
+
+.rsvp-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 18px 42px;
+
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 999px;
+
+    color: white;
+    text-decoration: none;
+
+    font-size: 26px;
+    font-weight: 500;
+
+    backdrop-filter: blur(8px);
+
+    transition:
+            transform 0.2s ease,
+            background 0.2s ease,
+            border-color 0.2s ease;
+}
+
+.rsvp-button:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.45);
+}
