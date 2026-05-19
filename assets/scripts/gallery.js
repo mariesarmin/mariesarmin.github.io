@@ -6,15 +6,15 @@ const lightboxNext = document.getElementById("lightbox-next");
 const galleryPreview = document.getElementById("gallery-preview");
 
 const galleryImages = [
-    "assets/gallery/img1.jpg",
-    "assets/gallery/img2.jpg",
-    "assets/gallery/img3.jpg",
-    "assets/gallery/img4.jpg",
-    "assets/gallery/img5.jpg",
-    "assets/gallery/img6.jpg",
-    "assets/gallery/img7.jpg",
-    "assets/gallery/img8.jpg",
-    "assets/gallery/img9.jpg"
+    "assets/gallery/img1.webp",
+    "assets/gallery/img2.webp",
+    "assets/gallery/img3.webp",
+    "assets/gallery/img4.webp",
+    "assets/gallery/img5.webp",
+    "assets/gallery/img6.webp",
+    "assets/gallery/img7.webp",
+    "assets/gallery/img8.webp",
+    "assets/gallery/img9.webp"
 ];
 
 const preloadedGallery = [];

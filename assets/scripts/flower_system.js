@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
         flowers = [];
 
         const mobile = window.innerWidth < 768;
-        const flowerCount = mobile ? 100 : 500;
+        const flowerCount = mobile ? 70 : 270;
 
         const temp = [];
 
@@ -197,11 +197,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             };
 
-            img.src = `assets/flowers/flower_${i}.png`;
+            img.src = `assets/flowers/flower_${i}.webp`;
         }
     }
 
+    function getViewportHeight() {
+        return window.visualViewport
+            ? window.visualViewport.height
+            : window.innerHeight;
+    }
+
     function draw(time) {
+        h = getViewportHeight();
+
+        canvas.style.height = h + "px";
+
         scroll += (scrollTarget - scroll) * 0.08;
 
         const eased = smoothstep(Math.min(scroll * 1.7, 1));
@@ -214,8 +224,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const t = time * 0.0012;
         const mobile = w < 768;
 
-        const FIELD_HEIGHT = h * 0.20;
-        const FIELD_TOP = h - FIELD_HEIGHT;
+        const FIELD_HEIGHT = mobile ? h * 0.12 : h * 0.20;
+        const FIELD_TOP = h - FIELD_HEIGHT +35;
 
         for (const f of flowers) {
 
